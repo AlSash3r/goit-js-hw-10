@@ -1,0 +1,107 @@
+:root {
+    --font-family: 'Montserrat', sans-serif;
+}
+.form {
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0;
+}
+.form>label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.form fieldset label {
+    display: flex;
+}
+input {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #2e2f42;
+    border: 1px solid #808080;
+    border-radius: 4px;
+    padding: 8px 16px;
+    height: 40px;
+    outline: none;
+}
+input:hover {
+    border-color: #000000;
+}
+input:focus {
+    border-color: #4e75ff;
+}
+button {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #fff;
+    background-color: #4e75ff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    width: 360px;
+    height: 40px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #6c8cff;
+}
+fieldset {
+    border: 1px solid #808080;
+    border-radius: 4px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 54px;
+    min-width: auto;
+    min-height: auto;
+    box-sizing: border-box;
+    width: 360px;
+    height: 70px;
+}
+.form fieldset label input[type='radio'] {
+    display: none;
+}
+.form fieldset input[type='radio']:checked+.custom-radio::before {
+    background-color: #4e75ff;
+}
+.form fieldset input[type='radio']:checked+.custom-radio {
+    border-color: #4e75ff;
+}
+legend {
+    padding: 0 4px;
+    margin-left: 24px;
+}
+fieldset:hover {
+    border-color: #2E2F42;
+}
+.custom-radio {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    border-radius: 50%;
+    border: 1px solid #757575;
+    position: relative;
+    transition: background-color 0.2s ease;
+}
+.custom-radio::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
