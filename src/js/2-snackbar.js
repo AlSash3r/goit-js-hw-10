@@ -1,9 +1,11 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+
 const form = document.forms[0];
 const delayInput = form.elements.delay;
 const stateInput = form.elements.state;
-const notificaionBtn = form.querySelector("button[type='submit']");
+const notificationBtn = form.querySelector("button[type='submit']");
+
 function createPromise(delay, status) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -51,9 +53,9 @@ function handleFormSubmit(event) {
     });
     return;
   }
-  const delay = parseInt(delayValue, 10) * 1000;
-  const state = stateChecked.value;
-  createPromise(delay, state === 'fulfilled')
+  const delay = parseInt(delayValue, 10);
+  const state = stateChecked.value === 'fulfilled';
+  createPromise(delay, state)
     .then(res => handlePromise(res, true))
     .catch(err => handlePromise(err, false));
   form.reset();
